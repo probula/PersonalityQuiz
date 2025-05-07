@@ -1,65 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:gravity="center"
-    android:padding="16dp"
-    android:orientation="vertical">
+    tools:context=".MainActivity">
 
-    <RadioButton
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="tak" />
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <DatePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:calendarViewShown="true"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pytanie"
+            android:textSize="24sp"
+            android:padding="10dp" />
 
-    <TimePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tak" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pytanie"
-        android:textSize="30dp"
-        android:padding="10dp"/>
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="true" />
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkboxOne"
-        android:text="odp1"
-        android:textSize="20dp"
-        android:padding="5dp"
-        />
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkboxTwo"
-        android:text="odp2"
-        android:textSize="20dp"
-        android:padding="5dp"
-        />
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkboxThree"
-        android:text="odp3"
-        android:textSize="20dp"
-        android:padding="5dp"
-        />
+        <TimePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pytanie"
+            android:textSize="30dp"/>
 
+        <CheckBox
+            android:id="@+id/checkboxOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="odp1"
+            android:textSize="18sp"
+            android:padding="5dp" />
 
+        <CheckBox
+            android:id="@+id/checkboxTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="odp2"
+            android:textSize="18sp"
+            android:padding="5dp" />
 
-</LinearLayout>
+        <CheckBox
+            android:id="@+id/checkboxThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="odp3"
+            android:textSize="18sp"
+            android:padding="5dp" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:min="1"
+            android:max="10"
+            android:progress="5"
+            android:progressTint="#E91E63"
+            android:progressBackgroundTint="#0DC939"
+            android:thumbTint="#123abc" />
+        <Spinner
+            android:id="@+id/spinnerCountries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:popupBackground="#E28E3C"
+            android:background="#F44336"/>
+
+    </LinearLayout>
+</ScrollView>
