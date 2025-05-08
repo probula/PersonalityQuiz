@@ -51,11 +51,13 @@
 
         <!-- CHECKBOX QUESTION -->
         <TextView
+            android:id="@+id/timerCounter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wybierz odpowiedzi:"
+            android:text="Wybierz odpowiedzi (czas na udzielenie odp. 15s):"
             android:textSize="20sp"
             android:layout_marginBottom="8dp" />
+
 
         <CheckBox
             android:id="@+id/checkboxOne"
