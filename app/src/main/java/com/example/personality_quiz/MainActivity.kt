@@ -1,7 +1,11 @@
 package com.example.personality_quiz
 
 import android.os.Bundle
+import android.os.SystemClock
+import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.Chronometer
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -26,5 +30,37 @@ class MainActivity : AppCompatActivity() {
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
+
+
+        lateinit var chronometer: Chronometer
+        lateinit var startBtn: Button
+        lateinit var stopBtn: Button
+        lateinit var resetBtn: Button
+        var running = false
+        var pauseOffset: Long = 0
+
+        chronometer = findViewById<Chronometer>(R.id.myChronometer)
+        startBtn = findViewById(R.id.startButton)
+        stopBtn = findViewById(R.id.stopButton)
+
+
+        startBtn.setOnClickListener {
+
+            if (!running) {
+                chronometer.base = SystemClock.elapsedRealtime() - pauseOffset
+                chronometer.start()
+                running = true
+            }
+        }
+
+        stopBtn.setOnClickListener {
+            if (running) {
+                pauseOffset = SystemClock.elapsedRealtime() - chronometer.base
+                Log.i("offset", "pauseOffset: $pauseOffset")
+                chronometer.stop()
+                running = false
+            }
+        }
+
     }
 }
