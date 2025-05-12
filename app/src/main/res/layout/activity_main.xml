@@ -31,13 +31,31 @@
             android:textSize="20sp"
             android:layout_marginBottom="8dp" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tak"
-            android:layout_marginBottom="16dp" />
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tak"/>
+
+            <RadioButton
+                android:id="@+id/no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nie"
+                android:layout_marginBottom="16dp" />
+    </RadioGroup>
 
         <!-- DATE AND TIME PICKERS -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wybierz datę i godzinę, kiedy wypełniono formularz"
+            android:textSize="25dp"
+            android:gravity="center"/>
         <DatePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

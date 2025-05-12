@@ -70,14 +70,30 @@ class MainActivity : AppCompatActivity() {
 
         countDownTimer.start()
 
+
         //PRZEJSCIE DO DRUGIEJ AKTYWNOSCI
-
         val explicitButton = findViewById<Button>(R.id.koniec)
-
-
         explicitButton.setOnClickListener {
             val explicitIntent = Intent(this, SummaryActivity::class.java)
             startActivity(explicitIntent)
         }
+
+        val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
+
+        explicitButton.setOnClickListener {
+            val selectedId = radioGroup.checkedRadioButtonId
+
+            if (selectedId != -1) {
+                val selectedRadioButton = findViewById<RadioButton>(selectedId)
+                val answer = selectedRadioButton.text.toString()
+
+                val intent = Intent(this, SummaryActivity::class.java)
+                intent.putExtra("answer", answer)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Proszę wybrać odpowiedź", Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 }
