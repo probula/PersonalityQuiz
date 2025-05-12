@@ -134,5 +134,11 @@
             android:backgroundTint="#4CAF50"
             android:layout_marginBottom="32dp" />
 
+        <Button
+            android:id="@+id/koniec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="zakończ quiz"/>
+
     </LinearLayout>
 </ScrollView>
