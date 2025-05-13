@@ -113,8 +113,14 @@ class MainActivity : AppCompatActivity() {
                 val selectedRadioButton = findViewById<RadioButton>(selectedId)
                 val answer = selectedRadioButton.text.toString()
 
-                // Wszystkie dane gotowe – tworzymy Intent
+                //SEEKBAR
+                val seekBar = findViewById<SeekBar>(R.id.poziom)
+                val seekValue = seekBar.progress
+
+
+                //WYSLANIE
                 val intent = Intent(this, SummaryActivity::class.java)
+                intent.putExtra("seekValue", seekValue)
                 intent.putExtra("answer", answer)
                 intent.putExtra("selectedDate", selectedDate)
                 intent.putExtra("selectedTime", selectedTime)

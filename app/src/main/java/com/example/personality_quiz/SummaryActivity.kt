@@ -1,6 +1,7 @@
 package com.example.personality_quiz
 
 import android.os.Bundle
+import android.widget.SeekBar
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +33,11 @@ class SummaryActivity : AppCompatActivity() {
         //PYTANIE 3
         val selectedCB = intent.getStringExtra("selectedCheckBoxes")
         findViewById<TextView>(R.id.wynikCB).text = "Wybrane odpowiedzi: $selectedCB"
+
+        //PYTANIE 4
+        val seekValue = intent.getIntExtra("seekValue", -1) //domyslna wartosc -1
+        findViewById<TextView>(R.id.wynikSB).text = "Wartość z suwaka: $seekValue"
+
 
     }
 }
