@@ -28,5 +28,10 @@ class SummaryActivity : AppCompatActivity() {
 
         val wynikDate = findViewById<TextView>(R.id.wynikDataCzas)
         wynikDate.text = "Data: $selectedDate\nCzas: $selectedTime"
+
+        //PYTANIE 3
+        val selectedCB = intent.getStringExtra("selectedCheckBoxes")
+        findViewById<TextView>(R.id.wynikCB).text = "Wybrane odpowiedzi: $selectedCB"
+
     }
 }

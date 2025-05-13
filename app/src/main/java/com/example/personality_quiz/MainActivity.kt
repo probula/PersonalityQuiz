@@ -74,40 +74,54 @@ class MainActivity : AppCompatActivity() {
         //PRZEJSCIE DO DRUGIEJ AKTYWNOSCI
         val finishButton = findViewById<Button>(R.id.koniec)
         finishButton.setOnClickListener {
-//            val explicitIntent = Intent(this, SummaryActivity::class.java)
-//            startActivity(explicitIntent)
+            finishButton.setOnClickListener {
+                val datePicker = findViewById<DatePicker>(R.id.dzien)
+                val timePicker = findViewById<TimePicker>(R.id.godzina)
+                val day = datePicker.dayOfMonth
+                val month = datePicker.month + 1
+                val year = datePicker.year
+                val hour = timePicker.hour
+                val minute = timePicker.minute
+                val selectedDate = "$day.$month.$year"
+                val selectedTime = "$hour:$minute"
 
+                val checkbox1 = findViewById<CheckBox>(R.id.checkboxOne)
+                val checkbox2 = findViewById<CheckBox>(R.id.checkboxTwo)
+                val checkbox3 = findViewById<CheckBox>(R.id.checkboxThree)
 
-            val datePicker = findViewById<DatePicker>(R.id.dzien)
-            val timePicker = findViewById<TimePicker>(R.id.godzina)
-            val day = datePicker.dayOfMonth
-            val month = datePicker.month + 1
-            val year = datePicker.year
-            val hour = timePicker.hour
-            val minute = timePicker.minute
+                val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
+                val selectedId = radioGroup.checkedRadioButtonId
 
-            val selectedDate = "$day.$month.$year"
-            val selectedTime = "$hour:$minute"
+                // Walidacja checkboxów
+                if (!checkbox1.isChecked && !checkbox2.isChecked && !checkbox3.isChecked) {
+                    Toast.makeText(this, "Proszę wybrać odpowiedź 0/3", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
 
+                // Walidacja radio buttona
+                if (selectedId == -1) {
+                    Toast.makeText(this, "Proszę wybrać odpowiedź, TAK/NIE", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
 
-            val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
-            val selectedId = radioGroup.checkedRadioButtonId
+                val selectedCheckBoxes = mutableListOf<String>()
+                if (checkbox1.isChecked) selectedCheckBoxes.add("Opcja 1")
+                if (checkbox2.isChecked) selectedCheckBoxes.add("Opcja 2")
+                if (checkbox3.isChecked) selectedCheckBoxes.add("Opcja 3")
+                val selectedCheckBoxesString = selectedCheckBoxes.joinToString(", ")
 
-            if (selectedId != -1) {
                 val selectedRadioButton = findViewById<RadioButton>(selectedId)
                 val answer = selectedRadioButton.text.toString()
+
+                // Wszystkie dane gotowe – tworzymy Intent
                 val intent = Intent(this, SummaryActivity::class.java)
                 intent.putExtra("answer", answer)
                 intent.putExtra("selectedDate", selectedDate)
                 intent.putExtra("selectedTime", selectedTime)
-                startActivity(intent)}
-            else{
-                Toast.makeText(this, "Proszę wybrać odpowiedź, TAK/NIE", Toast.LENGTH_SHORT).show()
+                intent.putExtra("selectedCheckBoxes", selectedCheckBoxesString)
+
+                startActivity(intent)
             }
-
-
-
-
         }
 
 
