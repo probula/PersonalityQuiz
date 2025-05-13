@@ -72,28 +72,47 @@ class MainActivity : AppCompatActivity() {
 
 
         //PRZEJSCIE DO DRUGIEJ AKTYWNOSCI
-        val explicitButton = findViewById<Button>(R.id.koniec)
-        explicitButton.setOnClickListener {
-            val explicitIntent = Intent(this, SummaryActivity::class.java)
-            startActivity(explicitIntent)
-        }
+        val finishButton = findViewById<Button>(R.id.koniec)
+        finishButton.setOnClickListener {
+//            val explicitIntent = Intent(this, SummaryActivity::class.java)
+//            startActivity(explicitIntent)
 
-        val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
 
-        explicitButton.setOnClickListener {
+            val datePicker = findViewById<DatePicker>(R.id.dzien)
+            val timePicker = findViewById<TimePicker>(R.id.godzina)
+            val day = datePicker.dayOfMonth
+            val month = datePicker.month + 1
+            val year = datePicker.year
+            val hour = timePicker.hour
+            val minute = timePicker.minute
+
+            val selectedDate = "$day.$month.$year"
+            val selectedTime = "$hour:$minute"
+
+
+            val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
             val selectedId = radioGroup.checkedRadioButtonId
 
             if (selectedId != -1) {
                 val selectedRadioButton = findViewById<RadioButton>(selectedId)
                 val answer = selectedRadioButton.text.toString()
-
                 val intent = Intent(this, SummaryActivity::class.java)
                 intent.putExtra("answer", answer)
-                startActivity(intent)
-            } else {
-                Toast.makeText(this, "Proszę wybrać odpowiedź", Toast.LENGTH_SHORT).show()
+                intent.putExtra("selectedDate", selectedDate)
+                intent.putExtra("selectedTime", selectedTime)
+                startActivity(intent)}
+            else{
+                Toast.makeText(this, "Proszę wybrać odpowiedź, TAK/NIE", Toast.LENGTH_SHORT).show()
             }
+
+
+
+
         }
+
+
+
+
 
     }
 }

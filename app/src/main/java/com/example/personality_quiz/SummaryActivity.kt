@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import org.w3c.dom.Text
 
 class SummaryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +18,15 @@ class SummaryActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        //PYTANIE 1
         val answer1 = intent.getStringExtra("answer")
-        findViewById<TextView>(R.id.wynik).text = "Twoja odpowiedź: $answer1"
+        findViewById<TextView>(R.id.wynikTN).text = "Twoja odpowiedź: $answer1"
+
+        //PYTANIE 2
+        val selectedDate = intent.getStringExtra("selectedDate")
+        val selectedTime = intent.getStringExtra("selectedTime")
+
+        val wynikDate = findViewById<TextView>(R.id.wynikDataCzas)
+        wynikDate.text = "Data: $selectedDate\nCzas: $selectedTime"
     }
 }
