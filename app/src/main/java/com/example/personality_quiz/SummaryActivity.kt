@@ -38,6 +38,10 @@ class SummaryActivity : AppCompatActivity() {
         val seekValue = intent.getIntExtra("seekValue", -1) //domyslna wartosc -1
         findViewById<TextView>(R.id.wynikSB).text = "Wartość z suwaka: $seekValue"
 
+        //PYTANIE 5
+        val selectedSpinner = intent.getStringExtra("selectedSpinner")
+        findViewById<TextView>(R.id.wynikSpinner).text = "Wybrana odpowiedź z Spinnera: $selectedSpinner"
+
 
     }
 }

@@ -5,7 +5,18 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.SystemClock
 import android.util.Log
-import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.Chronometer
+import android.widget.DatePicker
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.SeekBar
+import android.widget.Spinner
+import android.widget.TextView
+import android.widget.TimePicker
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        val spinner: Spinner = findViewById(R.id.spinnerCountries)
+        val spinner: Spinner = findViewById(R.id.spinnerODP)
         val countries = arrayOf("cos1", "cos2", "cos3", "cos4")
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, countries)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -117,6 +128,11 @@ class MainActivity : AppCompatActivity() {
                 val seekBar = findViewById<SeekBar>(R.id.poziom)
                 val seekValue = seekBar.progress
 
+                //SPINNER
+                val mySpinner = findViewById<Spinner>(R.id.spinnerODP)
+                val text: String? = mySpinner.getSelectedItem().toString()
+
+
 
                 //WYSLANIE
                 val intent = Intent(this, SummaryActivity::class.java)
@@ -125,6 +141,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("selectedDate", selectedDate)
                 intent.putExtra("selectedTime", selectedTime)
                 intent.putExtra("selectedCheckBoxes", selectedCheckBoxesString)
+                intent.putExtra("selectedSpinner", text)
 
                 startActivity(intent)
             }

@@ -47,6 +47,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/wynikSpinner"
+        android:layout_gravity="center_horizontal"
+        android:text="brak odpowiedzi"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="opis osobowości:"
         android:gravity="center_horizontal"
         />

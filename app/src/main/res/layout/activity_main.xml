@@ -130,7 +130,7 @@
             android:layout_marginBottom="4dp" />
 
         <Spinner
-            android:id="@+id/spinnerCountries"
+            android:id="@+id/spinnerODP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:popupBackground="#E28E3C"
