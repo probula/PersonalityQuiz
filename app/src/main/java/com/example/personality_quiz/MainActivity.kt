@@ -36,7 +36,21 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
+            }
+
+        val seekBar = findViewById<SeekBar>(R.id.poziom)
+        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                //fromUser - informacja czy zmiana wywołana przez użytkownika, czy programistycznie
+                Toast.makeText(this@MainActivity, "Wartość suwaka: $progress", Toast.LENGTH_SHORT).show()
+            }
+            override fun onStartTrackingTouch(seekBar: SeekBar) {
+                //Toast.makeText(this@MainActivity, "Zacząłeś przesuwać suwak", Toast.LENGTH_SHORT).show()
+            }
+            override fun onStopTrackingTouch(seekBar: SeekBar) {
+                //Toast.makeText(this@MainActivity, "Zakończyłeś przesuwanie suwaka", Toast.LENGTH_SHORT).show()
+            }
+        })
 
 
         val spinner: Spinner = findViewById(R.id.spinnerODP)
@@ -116,17 +130,19 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 val selectedCheckBoxes = mutableListOf<String>()
-                if (checkbox1.isChecked) selectedCheckBoxes.add("Opcja 1")
-                if (checkbox2.isChecked) selectedCheckBoxes.add("Opcja 2")
-                if (checkbox3.isChecked) selectedCheckBoxes.add("Opcja 3")
+                if (checkbox1.isChecked) selectedCheckBoxes.add("Opcja1")
+                if (checkbox2.isChecked) selectedCheckBoxes.add("Opcja2")
+                if (checkbox3.isChecked) selectedCheckBoxes.add("Opcja3")
                 val selectedCheckBoxesString = selectedCheckBoxes.joinToString(", ")
 
                 val selectedRadioButton = findViewById<RadioButton>(selectedId)
                 val answer = selectedRadioButton.text.toString()
 
                 //SEEKBAR
-                val seekBar = findViewById<SeekBar>(R.id.poziom)
                 val seekValue = seekBar.progress
+
+
+
 
                 //SPINNER
                 val mySpinner = findViewById<Spinner>(R.id.spinnerODP)

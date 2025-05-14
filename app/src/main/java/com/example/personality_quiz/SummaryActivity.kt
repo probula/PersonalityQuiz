@@ -1,6 +1,7 @@
 package com.example.personality_quiz
 
 import android.os.Bundle
+import android.widget.CheckBox
 import android.widget.SeekBar
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -45,6 +46,26 @@ class SummaryActivity : AppCompatActivity() {
         //CZAS
         val czas = intent.getStringExtra("czas") ?: "brak danych"
         findViewById<TextView>(R.id.czas).text = "Quiz rozwiązany w: $czas"
+
+        //WYNIK
+        val opisCB = when{
+            selectedCB?.contains("Opcja1") == true -> "jesteś ekstrawertykiem"
+            selectedCB?.contains("Opcja2") == true -> "jesteś średni"
+            selectedCB?.contains("Opcja3") == true -> "jesteś introwertykiem"
+            else -> "błąd z opisem!"
+        }
+        val wynikOpisCB = opisCB
+
+        val poziom = when{
+            seekValue >= 8 -> "na pewno $wynikOpisCB "
+            seekValue >= 5 -> "raczej $wynikOpisCB "
+            seekValue > 0 -> "nie $wynikOpisCB"
+            else -> "błąd z poziomem!"
+        }
+        findViewById<TextView>(R.id.opis).text = poziom
+
+
+
 
 
     }

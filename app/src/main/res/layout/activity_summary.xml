@@ -63,6 +63,7 @@
         android:layout_height="wrap_content"
         android:text="opis osobowości:"
         android:gravity="center_horizontal"
+        android:id="@+id/opis"
         />
 
 

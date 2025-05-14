@@ -74,7 +74,7 @@
             android:id="@+id/timerCounter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wybierz odpowiedzi (czas na udzielenie odp. 15s):"
+            android:text="Jak sie dziś czujesz? (czas na udzielenie odp. 30s):"
             android:textSize="20sp"
             android:layout_marginBottom="8dp" />
 
@@ -83,21 +83,21 @@
             android:id="@+id/checkboxOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Odpowiedź 1"
+            android:text="dobrze"
             android:textSize="16sp" />
 
         <CheckBox
             android:id="@+id/checkboxTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Odpowiedź 2"
+            android:text="średnio"
             android:textSize="16sp" />
 
         <CheckBox
             android:id="@+id/checkboxThree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Odpowiedź 3"
+            android:text="źle"
             android:textSize="16sp"
             android:layout_marginBottom="16dp" />
 
@@ -105,7 +105,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wybierz poziom:"
+            android:text="Wybierz poziom jak bardzo:"
             android:textSize="18sp"
             android:layout_marginBottom="4dp" />
 
@@ -125,7 +125,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wybierz kraj:"
+            android:text="Jaki kolor lubisz najbardziej?:"
             android:textSize="18sp"
             android:layout_marginBottom="4dp" />
 
