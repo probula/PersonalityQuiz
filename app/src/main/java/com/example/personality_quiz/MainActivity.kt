@@ -132,6 +132,10 @@ class MainActivity : AppCompatActivity() {
                 val mySpinner = findViewById<Spinner>(R.id.spinnerODP)
                 val text: String? = mySpinner.getSelectedItem().toString()
 
+                //TIMER
+                val timer = findViewById<Chronometer>(R.id.myChronometer)
+                val czas = timer.text.toString()
+
 
 
                 //WYSLANIE
@@ -142,6 +146,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("selectedTime", selectedTime)
                 intent.putExtra("selectedCheckBoxes", selectedCheckBoxesString)
                 intent.putExtra("selectedSpinner", text)
+                intent.putExtra("czas", czas)
 
                 startActivity(intent)
             }

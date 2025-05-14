@@ -42,6 +42,10 @@ class SummaryActivity : AppCompatActivity() {
         val selectedSpinner = intent.getStringExtra("selectedSpinner")
         findViewById<TextView>(R.id.wynikSpinner).text = "Wybrana odpowiedź z Spinnera: $selectedSpinner"
 
+        //CZAS
+        val czas = intent.getStringExtra("czas") ?: "brak danych"
+        findViewById<TextView>(R.id.czas).text = "Quiz rozwiązany w: $czas"
+
 
     }
 }
