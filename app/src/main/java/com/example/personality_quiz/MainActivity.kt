@@ -54,31 +54,23 @@ class MainActivity : AppCompatActivity() {
 
 
         val spinner: Spinner = findViewById(R.id.spinnerODP)
-        val countries = arrayOf("cos1", "cos2", "cos3", "cos4")
+        val countries = arrayOf("czerwony", "zielony", "niebieski", "inny")
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, countries)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
 
         val chronometer: Chronometer = findViewById(R.id.myChronometer)
-        val startBtn: Button = findViewById(R.id.startButton)
-        val stopBtn: Button = findViewById(R.id.stopButton)
+        chronometer.base = SystemClock.elapsedRealtime()
+        chronometer.start()
+        running = true
 
-        startBtn.setOnClickListener {
-            if (!running) {
+            if (running) {
                 chronometer.base = SystemClock.elapsedRealtime() - pauseOffset
                 chronometer.start()
                 running = true
             }
-        }
 
-        stopBtn.setOnClickListener {
-            if (running) {
-                pauseOffset = SystemClock.elapsedRealtime() - chronometer.base
-                Log.i("offset", "pauseOffset: $pauseOffset")
-                chronometer.stop()
-                running = false
-            }
-        }
+
 
         val timerTextView: TextView = findViewById(R.id.timerCounter)
 
@@ -93,13 +85,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        countDownTimer.start()
+        //countDownTimer.start()
 
 
         //PRZEJSCIE DO DRUGIEJ AKTYWNOSCI
         val finishButton = findViewById<Button>(R.id.koniec)
-        finishButton.setOnClickListener {
-            finishButton.setOnClickListener {
+        finishButton.setOnClickListener{
                 val datePicker = findViewById<DatePicker>(R.id.dzien)
                 val timePicker = findViewById<TimePicker>(R.id.godzina)
                 val day = datePicker.dayOfMonth
@@ -171,6 +162,4 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
     }
-}

@@ -12,24 +12,27 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="#ffeead">
 
         <!-- START BUTTON -->
-        <Button
-            android:id="@+id/startButton"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="#123abc" />
+            android:text="Quiz się zaczął!"
+            android:id="@+id/title"
+            android:textSize="30dp"
+            android:textColor="#ff6f69"
+            android:textStyle="bold"/>
 
         <!-- QUESTION LABEL -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pytanie"
+            android:text="Czy regularnie zawiersz nowe przyjaźnie?"
             android:textSize="20sp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            android:textColor="#0ba4b5"/>
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -39,14 +42,20 @@
                 android:id="@+id/yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tak"/>
+                android:text="Tak"
+                android:textColor="#ff6f69"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
 
             <RadioButton
                 android:id="@+id/no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nie"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                android:textColor="#ff6f69"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
     </RadioGroup>
 
         <!-- DATE AND TIME PICKERS -->
@@ -55,7 +64,8 @@
             android:layout_height="wrap_content"
             android:text="Wybierz datę i godzinę, kiedy wypełniono formularz"
             android:textSize="25dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="#0ba4b5"/>
         <DatePicker
             android:id="@+id/dzien"
             android:layout_width="wrap_content"
@@ -76,7 +86,8 @@
             android:layout_height="wrap_content"
             android:text="Jak sie dziś czujesz? (czas na udzielenie odp. 30s):"
             android:textSize="20sp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            android:textColor="#0ba4b5"/>
 
 
         <CheckBox
@@ -84,14 +95,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="dobrze"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textColor="#ff6f69"
+            android:textStyle="bold"
+            />
 
         <CheckBox
             android:id="@+id/checkboxTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="średnio"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textColor="#ff6f69"
+            android:textStyle="bold"/>
 
         <CheckBox
             android:id="@+id/checkboxThree"
@@ -99,7 +115,9 @@
             android:layout_height="wrap_content"
             android:text="źle"
             android:textSize="16sp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:textColor="#ff6f69"
+            android:textStyle="bold"/>
 
         <!-- SEEKBAR -->
         <TextView
@@ -107,7 +125,9 @@
             android:layout_height="wrap_content"
             android:text="Wybierz poziom jak bardzo:"
             android:textSize="18sp"
-            android:layout_marginBottom="4dp" />
+            android:layout_marginBottom="4dp"
+            android:textColor="#0ba4b5"
+            />
 
         <SeekBar
             android:id="@+id/poziom"
@@ -116,9 +136,9 @@
             android:min="1"
             android:max="10"
             android:progress="5"
-            android:progressTint="#E91E63"
-            android:progressBackgroundTint="#0DC939"
-            android:thumbTint="#123abc"
+            android:progressTint="#ffcc5c"
+            android:progressBackgroundTint="#0ba4b5"
+            android:thumbTint="#ff6f69"
             android:layout_marginBottom="16dp" />
 
         <!-- SPINNER -->
@@ -127,39 +147,34 @@
             android:layout_height="wrap_content"
             android:text="Jaki kolor lubisz najbardziej?:"
             android:textSize="18sp"
-            android:layout_marginBottom="4dp" />
+            android:layout_marginBottom="4dp"
+            android:textColor="#0ba4b5"/>
 
         <Spinner
             android:id="@+id/spinnerODP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:popupBackground="#E28E3C"
-            android:background="#F44336"
-            android:layout_marginBottom="16dp" />
+            android:popupBackground="#88d8b0"
+            android:background="#0ba4b5"
+            android:layout_marginBottom="16dp"/>
 
         <!-- CHRONOMETER -->
         <Chronometer
             android:id="@+id/myChronometer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
+            android:textSize="35dp"
             android:layout_marginBottom="16dp"
-            android:layout_gravity="center" />
-
-        <!-- STOP BUTTON -->
-        <Button
-            android:id="@+id/stopButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stop"
-            android:backgroundTint="#4CAF50"
-            android:layout_marginBottom="32dp" />
+            android:layout_gravity="center"
+            android:textColor="#ff6f69"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/koniec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="zakończ quiz"/>
+            android:text="zakończ quiz"
+            android:backgroundTint="#b50b0b"/>
 
     </LinearLayout>
 </ScrollView>

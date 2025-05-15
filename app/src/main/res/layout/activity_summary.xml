@@ -15,55 +15,67 @@
         android:text="TWOJ TYP OSOBOWOSCI:"
         android:textSize="30dp"
         android:textColor="#32a852"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:layout_margin="10dp"/>
 
     <TextView
         android:id="@+id/wynikTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="brak odpowiedzi: tak/nie"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:textSize="17dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/wynikDataCzas"
         android:layout_gravity="center_horizontal"
-        android:text="brak odpowiedzi: data i godzina"/>
+        android:text="brak odpowiedzi: data i godzina"
+        android:textSize="17dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/wynikCB"
         android:layout_gravity="center_horizontal"
-        android:text="brak odpowiedzi: 0/3"/>
+        android:text="brak odpowiedzi: 0/3"
+        android:textSize="17dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/wynikSB"
         android:layout_gravity="center_horizontal"
-        android:text="brak odpowiedzi: 0/3"/>
+        android:text="brak odpowiedzi: SeekBar"
+        android:textSize="17dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/wynikSpinner"
         android:layout_gravity="center_horizontal"
-        android:text="brak odpowiedzi"/>
+        android:text="brak odpowiedzi: Spinner"
+        android:textSize="17dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/czas"
         android:layout_gravity="center_horizontal"
-        android:text="błąd"/>
+        android:text="czas"
+        android:textSize="17dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="opis osobowości:"
-        android:gravity="center_horizontal"
+        android:layout_gravity="center"
         android:id="@+id/opis"
+        android:layout_margin="30dp"
+        android:textColor="#ffdd00"
+        android:textStyle="bold"
+        android:textSize="25dp"
         />
 
 
