@@ -126,7 +126,12 @@ class MainActivity : AppCompatActivity() {
                 if (checkbox1.isChecked) selectedCheckBoxes.add("Opcja1")
                 if (checkbox2.isChecked) selectedCheckBoxes.add("Opcja2")
                 if (checkbox3.isChecked) selectedCheckBoxes.add("Opcja3")
-                val selectedCheckBoxesString = selectedCheckBoxes.joinToString(", ")
+
+                val finalCB = if (selectedCheckBoxes.size >= 2){
+                    selectedCheckBoxes.random()
+                } else {
+                    selectedCheckBoxes.joinToString(", ")
+                }
 
                 val selectedRadioButton = findViewById<RadioButton>(selectedId)
                 val answer = selectedRadioButton.text.toString()
@@ -155,7 +160,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("answer", answer)
                 intent.putExtra("selectedDate", selectedDate)
                 intent.putExtra("selectedTime", selectedTime)
-                intent.putExtra("selectedCheckBoxes", selectedCheckBoxesString)
+                intent.putExtra("selectedCheckBoxes", finalCB)
                 intent.putExtra("selectedSpinner", text)
                 intent.putExtra("czas", czas)
 
