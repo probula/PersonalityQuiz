@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val spinner: Spinner = findViewById(R.id.spinnerODP)
-        val countries = arrayOf("czerwony", "zielony", "niebieski", "inny")
+        val countries = arrayOf("czerwony", "zielony", "niebieski")
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, countries)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         val chronometer: Chronometer = findViewById(R.id.myChronometer)
         chronometer.base = SystemClock.elapsedRealtime()
         chronometer.start()
-        running = true
+        //running = true
 
             if (running) {
                 chronometer.base = SystemClock.elapsedRealtime() - pauseOffset
@@ -120,6 +120,8 @@ class MainActivity : AppCompatActivity() {
                     return@setOnClickListener
                 }
 
+
+
                 val selectedCheckBoxes = mutableListOf<String>()
                 if (checkbox1.isChecked) selectedCheckBoxes.add("Opcja1")
                 if (checkbox2.isChecked) selectedCheckBoxes.add("Opcja2")
@@ -128,6 +130,8 @@ class MainActivity : AppCompatActivity() {
 
                 val selectedRadioButton = findViewById<RadioButton>(selectedId)
                 val answer = selectedRadioButton.text.toString()
+
+
 
                 //SEEKBAR
                 val seekValue = seekBar.progress

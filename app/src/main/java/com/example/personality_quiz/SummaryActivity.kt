@@ -48,6 +48,11 @@ class SummaryActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.czas).text = "Quiz rozwiązany w: $czas"
 
         //WYNIK
+
+
+
+
+
         val opisCB = when{
             selectedCB?.contains("Opcja1") == true -> "jesteś ekstrawertykiem"
             selectedCB?.contains("Opcja2") == true -> "jesteś średni"
@@ -62,10 +67,18 @@ class SummaryActivity : AppCompatActivity() {
             seekValue > 0 -> "nie $wynikOpisCB"
             else -> "błąd z poziomem!"
         }
-        findViewById<TextView>(R.id.opis).text = poziom
 
 
 
+        val kolor = when{
+            selectedSpinner == "czerwony" -> "jesteś osobą która lubi mieć nad wszystkim kontolę"
+            selectedSpinner == "zielony" -> "jesteś osobą pełną zrozumienia, ugodową"
+            selectedSpinner == "niebieski" -> "jesteś osobą która jest precyzyjna, dobrze zorganizowana"
+            else -> "zły kolor!"
+        }
+
+        val odp = "$poziom, $kolor"
+        findViewById<TextView>(R.id.opis).text = odp
 
 
     }

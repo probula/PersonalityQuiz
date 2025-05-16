@@ -13,7 +13,7 @@
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="16dp"
-        android:background="#ffeead">
+        android:background="#f4f4f8">
 
         <!-- START BUTTON -->
         <TextView
@@ -22,7 +22,7 @@
             android:text="Quiz się zaczął!"
             android:id="@+id/title"
             android:textSize="30dp"
-            android:textColor="#ff6f69"
+            android:textColor="#fe4a49"
             android:textStyle="bold"/>
 
         <!-- QUESTION LABEL -->
@@ -32,7 +32,7 @@
             android:text="Czy regularnie zawiersz nowe przyjaźnie?"
             android:textSize="20sp"
             android:layout_marginBottom="8dp"
-            android:textColor="#0ba4b5"/>
+            android:textColor="#2ab7ca"/>
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tak"
-                android:textColor="#ff6f69"
+                android:textColor="#fe4a49"
                 android:textStyle="bold"
                 android:textSize="20dp"/>
 
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:text="Nie"
                 android:layout_marginBottom="16dp"
-                android:textColor="#ff6f69"
+                android:textColor="#fe4a49"
                 android:textStyle="bold"
                 android:textSize="20dp"/>
     </RadioGroup>
@@ -65,7 +65,7 @@
             android:text="Wybierz datę i godzinę, kiedy wypełniono formularz"
             android:textSize="25dp"
             android:gravity="center"
-            android:textColor="#0ba4b5"/>
+            android:textColor="#2ab7ca"/>
         <DatePicker
             android:id="@+id/dzien"
             android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
             android:text="Jak sie dziś czujesz? (czas na udzielenie odp. 30s):"
             android:textSize="20sp"
             android:layout_marginBottom="8dp"
-            android:textColor="#0ba4b5"/>
+            android:textColor="#2ab7ca"/>
 
 
         <CheckBox
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:text="dobrze"
             android:textSize="16sp"
-            android:textColor="#ff6f69"
+            android:textColor="#fe4a49"
             android:textStyle="bold"
             />
 
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:text="średnio"
             android:textSize="16sp"
-            android:textColor="#ff6f69"
+            android:textColor="#fe4a49"
             android:textStyle="bold"/>
 
         <CheckBox
@@ -116,7 +116,7 @@
             android:text="źle"
             android:textSize="16sp"
             android:layout_marginBottom="16dp"
-            android:textColor="#ff6f69"
+            android:textColor="#fe4a49"
             android:textStyle="bold"/>
 
         <!-- SEEKBAR -->
@@ -126,7 +126,7 @@
             android:text="Wybierz poziom jak bardzo:"
             android:textSize="18sp"
             android:layout_marginBottom="4dp"
-            android:textColor="#0ba4b5"
+            android:textColor="#2ab7ca"
             />
 
         <SeekBar
@@ -136,9 +136,9 @@
             android:min="1"
             android:max="10"
             android:progress="5"
-            android:progressTint="#ffcc5c"
-            android:progressBackgroundTint="#0ba4b5"
-            android:thumbTint="#ff6f69"
+            android:progressTint="#fed766"
+            android:progressBackgroundTint="#2ab7ca"
+            android:thumbTint="#fe4a49"
             android:layout_marginBottom="16dp" />
 
         <!-- SPINNER -->
@@ -154,8 +154,8 @@
             android:id="@+id/spinnerODP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:popupBackground="#88d8b0"
-            android:background="#0ba4b5"
+            android:popupBackground="#fed766"
+            android:background="#2ab7ca"
             android:layout_marginBottom="16dp"/>
 
         <!-- CHRONOMETER -->
@@ -166,15 +166,15 @@
             android:textSize="35dp"
             android:layout_marginBottom="16dp"
             android:layout_gravity="center"
-            android:textColor="#ff6f69"
-            android:textStyle="bold" />
+            android:textColor="#fe4a49"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/koniec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="zakończ quiz"
-            android:backgroundTint="#b50b0b"/>
+            android:backgroundTint="#fed766"/>
 
     </LinearLayout>
 </ScrollView>
