@@ -13,10 +13,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TWOJ TYP OSOBOWOSCI:"
+        android:text="TWÓJ TYP OSOBOWOŚCI:"
         android:textSize="30dp"
         android:textColor="#fe4a49"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:textStyle="bold"
         android:layout_margin="10dp"/>
 
@@ -25,14 +26,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="brak odpowiedzi: tak/nie"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:textSize="17dp"
-        android:textColor="#2ab7ca"/>
+        android:textColor="#2ab7ca" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/wynikDataCzas"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:text="brak odpowiedzi: data i godzina"
         android:textSize="17dp"
         android:textColor="#2ab7ca"/>
@@ -41,7 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/wynikCB"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:text="brak odpowiedzi: 0/3"
         android:textSize="17dp"
         android:textColor="#2ab7ca"/>
@@ -50,7 +54,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/wynikSB"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:text="brak odpowiedzi: SeekBar"
         android:textSize="17dp"
         android:textColor="#2ab7ca"/>
@@ -59,7 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/wynikSpinner"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:text="brak odpowiedzi: Spinner"
         android:textSize="17dp"
         android:textColor="#2ab7ca"/>
@@ -68,7 +74,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/czas"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:text="czas"
         android:textSize="17dp"
         android:textColor="#2ab7ca"/>

@@ -25,6 +25,7 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
     private var running = false
     private var pauseOffset: Long = 0
+    var odpowiedzPoCzasie = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,15 +78,18 @@ class MainActivity : AppCompatActivity() {
         val countDownTimer = object : CountDownTimer(30000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 val secondsLeft = millisUntilFinished / 1000
-                timerTextView.text = "Pozostało $secondsLeft sekund"
+                timerTextView.text = "Jak sie dziś czujesz?: (czas na udzielenie odp. $secondsLeft):"
             }
+
+
 
             override fun onFinish() {
                 timerTextView.text = "Czas minął!"
+                odpowiedzPoCzasie = true
             }
         }
 
-        //countDownTimer.start()
+        countDownTimer.start()
 
 
         //PRZEJSCIE DO DRUGIEJ AKTYWNOSCI
@@ -163,6 +167,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("selectedCheckBoxes", finalCB)
                 intent.putExtra("selectedSpinner", text)
                 intent.putExtra("czas", czas)
+                intent.putExtra("poCzasie", odpowiedzPoCzasie)
 
                 startActivity(intent)
             }

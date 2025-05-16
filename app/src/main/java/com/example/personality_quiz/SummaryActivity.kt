@@ -55,7 +55,7 @@ class SummaryActivity : AppCompatActivity() {
 
         val opisCB = when{
             selectedCB?.contains("Opcja1") == true -> "jesteś ekstrawertykiem"
-            selectedCB?.contains("Opcja2") == true -> "jesteś średni"
+            selectedCB?.contains("Opcja2") == true -> "jesteś ambiwertyk"
             selectedCB?.contains("Opcja3") == true -> "jesteś introwertykiem"
             else -> "błąd z opisem!"
         }
@@ -80,6 +80,10 @@ class SummaryActivity : AppCompatActivity() {
         val odp = "$poziom, $kolor"
         findViewById<TextView>(R.id.opis).text = odp
 
+        val poCzasie = intent.getBooleanExtra("poCzasie", false)
+        if(poCzasie){
+            findViewById<TextView>(R.id.czas).append(" (odpowiedziano po czasie!)")
+        }
 
     }
 }
