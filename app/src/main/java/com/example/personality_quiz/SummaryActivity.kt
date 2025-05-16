@@ -62,18 +62,18 @@ class SummaryActivity : AppCompatActivity() {
         val wynikOpisCB = opisCB
 
         val poziom = when{
-            seekValue >= 8 -> "na pewno $wynikOpisCB "
-            seekValue >= 5 -> "raczej $wynikOpisCB "
-            seekValue > 0 -> "nie $wynikOpisCB"
+            seekValue >= 8 -> "Na pewno $wynikOpisCB"
+            seekValue >= 5 -> "Raczej $wynikOpisCB"
+            seekValue > 0 -> "Nie $wynikOpisCB"
             else -> "błąd z poziomem!"
         }
 
 
 
         val kolor = when{
-            selectedSpinner == "czerwony" -> "jesteś osobą która lubi mieć nad wszystkim kontolę"
-            selectedSpinner == "zielony" -> "jesteś osobą pełną zrozumienia, ugodową"
-            selectedSpinner == "niebieski" -> "jesteś osobą która jest precyzyjna, dobrze zorganizowana"
+            selectedSpinner == "czerwony" -> "jesteś osobą która lubi mieć nad wszystkim kontolę."
+            selectedSpinner == "zielony" -> "jesteś osobą pełną zrozumienia, ugodową."
+            selectedSpinner == "niebieski" -> "jesteś osobą która jest precyzyjna, dobrze zorganizowana."
             else -> "zły kolor!"
         }
 
