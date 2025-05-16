@@ -55,7 +55,7 @@ class SummaryActivity : AppCompatActivity() {
 
         val opisCB = when{
             selectedCB?.contains("Opcja1") == true -> "jesteś ekstrawertykiem"
-            selectedCB?.contains("Opcja2") == true -> "jesteś ambiwertyk"
+            selectedCB?.contains("Opcja2") == true -> "jesteś ambiwertykiem"
             selectedCB?.contains("Opcja3") == true -> "jesteś introwertykiem"
             else -> "błąd z opisem!"
         }
